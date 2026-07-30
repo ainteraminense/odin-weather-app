@@ -1,0 +1,39 @@
+{
+  "name": "odin-webpack-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "checkout-gh-pages": "git checkout gh-pages && git merge main --no-edit",
+    "deployment-commit": "git add dist -f && git commit -m \"Deployment commit\"",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ainteraminense/odin-webpack-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ainteraminense/odin-webpack-template/issues"
+  },
+  "homepage": "https://github.com/ainteraminense/odin-webpack-template#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "css-loader": "^7.1.4",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0",
+    "html-webpack-plugin": "^5.6.7",
+    "prettier": "3.9.6",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.108.3",
+    "webpack-cli": "^7.1.0",
+    "webpack-dev-server": "^5.2.6",
+    "webpack-merge": "^6.0.1"
+  }
+}
