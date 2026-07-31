@@ -11,7 +11,12 @@ async function getWeather(location) {
 
 export async function extractTemp(location) {
     return getWeather(location).then(function (response) {
-    return response.currentConditions.temp;
+        return response.currentConditions.temp;
     });
 }
 
+export async function extractConditions(location) {
+    return getWeather(location).then(function (response) {
+        return response.currentConditions.conditions; 
+    })
+}
