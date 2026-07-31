@@ -48,6 +48,7 @@ button.addEventListener("click", () => {
             const condDisplayText = document.createTextNode(`The conditions in ${locationInput.value} is ${c}`);
             condDisplay.appendChild(condDisplayText);
             imgDisplay.src = response.data.images.original.url;
+            imgDisplay.width = 250;
         }).catch(function(e) {
             console.log(e);
         });
