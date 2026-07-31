@@ -1,11 +1,12 @@
 body {
   font-family: "Courier New", Courier, monospace;
   font-size: larger;
-  color: #2e7d0a;
+  color: #44b80e;
   font-weight: bolder;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #005050;
 }
 
 h1 {
@@ -15,4 +16,10 @@ h1 {
 img {
   display: block;
   margin: 0 auto;
+}
+
+#temp-container{
+    margin: 16px auto;
+    display: flex;
+    justify-content: center;
 }

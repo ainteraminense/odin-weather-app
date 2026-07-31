@@ -20,3 +20,12 @@ export async function extractConditions(location) {
         return response.currentConditions.conditions; 
     })
 }
+
+export function changeToCelsius(temp) {
+    return (temp - 32) * 5/9;
+}
+
+export function changeToFahrenheit(temp) {
+    return (temp * 9/5) + 32;
+}
+
