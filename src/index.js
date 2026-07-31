@@ -1,17 +1,15 @@
 import "./styles.css";
+import {extractTemp} from "./weather.js"
 
-async function getWeather(location) {
-    try {
-        const weather = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=Y86AUV62SAQMW9QQ7DCTWZWMG`);
-        const json = weather.json();
-        return json;
-    } catch (e) {
-        console.log(e);
-    }    
-}
+const locationInput = document.querySelector("#location");
+const display = document.querySelector("#display");
+const button = document.querySelector("button");
 
-const temp = getWeather('Toronto').then(function (response) {
-    return response.currentConditions.temp;
-});
-// const temp = weather.currentConditions.temp;
-temp.then((v) => console.log(v));
+button.addEventListener("click", () => {
+    display.textContent = "";
+    extractTemp(locationInput.value).then((t) => {
+        const displayText = document.createTextNode(`The temperature in ${locationInput.value} is ${t}`);
+        display.appendChild(displayText);
+    });
+    event.preventDefault();
+})
